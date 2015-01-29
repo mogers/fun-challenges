@@ -7,7 +7,6 @@ using namespace std;
 template<typename T>
 class SimpleStream {
  public:
-   SimpleStream() {}
   // Adds the given values to the stream.
   SimpleStream(const vector<pair<T, int>>& pairs) {
     for (const auto& p : pairs) {
@@ -72,6 +71,7 @@ void SimpleTest() {
     printf("id %lu   expected %.4f  got %.4f\n", i, expected, got);
   }
 }
+
 int main() {
   srand(time(0));
   SimpleTest();
