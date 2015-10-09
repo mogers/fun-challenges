@@ -2,13 +2,13 @@
 #define _PRINT_UTILS_H_
 
 #include <iostream>
-#include <vector>
 
 namespace util {
 
-template<class T>
-inline void PrintVector(const std::vector<T>& vec) {
-  for (const auto& element : vec) {
+// Prints the elements of a given collection in a line, separated by spaces.
+template<class Container>
+inline void PrintCollection(const Container& collection) {
+  for (const auto& element : collection) {
     std::cout << element << ' ';
   }
   std::cout << '\n';

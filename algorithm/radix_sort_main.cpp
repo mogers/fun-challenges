@@ -1,5 +1,4 @@
 #include "radix_sort.h"
-#include "../util/print_utils.h"
 #include "../util/rand_utils.h"
 #include "../util/time_measure.h"
 
