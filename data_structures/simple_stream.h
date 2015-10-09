@@ -11,9 +11,9 @@ class SimpleStream {
  public:
 
   // Adds the given values to the stream.
-  SimpleStream(const std::vector<std::pair<T, int>>& pairs) {
-    for (const auto& p : pairs) {
-      stream_.push(p);
+  SimpleStream(const std::vector<T>& values) {
+    for (const auto& value : values) {
+      stream_.push(value);
     }
   }
 
@@ -22,14 +22,14 @@ class SimpleStream {
   }
 
   // Retrieves the next element of the stream. Assumes it is not empty.
-  std::pair<T, int> Next() {
-    auto p = stream_.front();
+  T Next() {
+    T p = stream_.front();
     stream_.pop();
     return p;
   }
 
  private:
-  std::queue<std::pair<T, int>> stream_;
+  std::queue<T> stream_;
 
 };
 

@@ -9,8 +9,8 @@ using namespace std;
 // stream with probability proportional to its weight compared to the total
 // weight sums. Assumes the stream is not empty.
 template<typename T>
-T Select(ds::SimpleStream<T>& stream) {
-  auto p = stream.Next();
+T Select(ds::SimpleStream<pair<T, int>>& stream) {
+  pair<T, int> p = stream.Next();
   T selected_value = p.first;
   int sum = p.second;
   while (stream.HasNext()) {
@@ -31,7 +31,7 @@ void SimpleTest() {
   // Simulate 1 000 000 selections.
   int number_trials = 1000000;
   for (int t = 0; t < number_trials; ++t) {
-    ds::SimpleStream<int> s(pairs);
+    ds::SimpleStream<pair<int, int>> s(pairs);
     int id = Select<int>(s);
     ++times_selected[id];
   }
