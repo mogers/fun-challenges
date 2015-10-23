@@ -21,6 +21,7 @@ INPUT_FILE_EXT = '.in'
 OUTPUT_DIR = './'
 OUTPUT_FILE_EXT = '.out'
 PROGRAM = './a'
+TIMEOUT = 1
 
 class Command(object):
   def __init__(self):
@@ -80,7 +81,7 @@ def main():
   parser.add_argument('--output_dir', default=OUTPUT_DIR)
   parser.add_argument('--output_file_ext', default=OUTPUT_FILE_EXT)
   parser.add_argument('-r', '--run', default=PROGRAM)
-  parser.add_argument('-t', '--timeout', type=int, default=1)
+  parser.add_argument('-t', '--timeout', type=int, default=TIMEOUT)
   args = parser.parse_args()
 
   command = Command()
